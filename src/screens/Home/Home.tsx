@@ -25,7 +25,7 @@ export default function Home() {
             <View style={styles.locationContainer}>
               <View style={styles.locationLabelContainer}>
                 <Text style={styles.locationContainerText}>Location</Text>
-                <Icon name="down" size={16} color={COLORS.white} />
+                <Icon name="down" size={16} color={COLORS.lightGray} />
               </View>
               <View>
                 <Text style={styles.locationName}>AR Mall, New York</Text>
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   locationContainerText: {
-    color: COLORS.white,
+    color: COLORS.lightGray,
   },
   locationName: {
     color: COLORS.yellow,

@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign'; // You may need to install 'expo' package for this
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import {COLORS} from '../constants/colors';
 
 interface Restaurant {
@@ -72,14 +71,14 @@ export const renderItem = ({item}: {item: Restaurant}) => (
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <FontAwesome name="dollar" size={18} color={'white'} />
               <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white'}}>
-                {item.priceInDollars}
+                {item.priceInDollars}/-
               </Text>
             </View>
           </View>
 
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <FontAwesome6 name="clock" size={16} color={'white'} />
+              <AntDesign name="clockcircle" size={16} color={'white'} />
               <Text style={{color: 'white'}}> {" "}
                 {item.timeDurationMinutes} mins  •  {item.distanceRating} km
               </Text>

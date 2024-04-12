@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather'; // You may need to install 'expo' package for this
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS } from '../constants/colors';
 
 interface SearchBarProps {
@@ -21,7 +22,7 @@ interface SearchBarProps {
           onChangeText={(text:string) =>setSearchText(text)}
         />
         <TouchableOpacity onPress={onCheck} style={[styles.iconContainer,{backgroundColor:COLORS.yellow}]}>
-          <Feather name="check" size={24} color="white" />
+          <Ionicons name="options" size={24} color="white" />
         </TouchableOpacity>
       </View>
     );

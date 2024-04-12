@@ -22,7 +22,7 @@ const Screen2 = () => {
 };
 
 export default function BottomtabNavigator() {
-  const _renderIcon = (routeName: any, selectedTab: any) => {
+  const _renderIcon = (routeName: string, selectedTab: string) => {
     let icon = 'home';
 
     switch (routeName) {
@@ -32,11 +32,11 @@ export default function BottomtabNavigator() {
       case 'Follow':
         icon = 'heart-outline';
         break;
-      case 'Follow':
-        icon = 'home';
+      case 'Trending':
+        icon = 'trending-up-outline';
         break;
       case 'Profile':
-        icon = 'home';
+        icon = 'person-outline';
         break;
     }
 

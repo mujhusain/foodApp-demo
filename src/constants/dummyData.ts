@@ -53,6 +53,28 @@ export const dataList=[
       "liked": true,
       "shareLink": "https://example.com/restaurant-e",
       "image": "https://th.bing.com/th/id/OIP.oaMXFk2_1WyRNiya-VDm8AAAAA?w=472&h=265&rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "6",
+      "restaurantName": "Restaurant F",
+      "timeDurationMinutes": 90,
+      "priceInDollars": 70,
+      "discountPercentage": 20,
+      "distanceRating": 4.2,
+      "liked": false,
+      "shareLink": "https://example.com/restaurant-d",
+      "image": "https://th.bing.com/th/id/OIP.ixjUqcu481IjbqPPQhqvYQHaE8?w=768&h=512&rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "7",
+      "restaurantName": "Restaurant G",
+      "timeDurationMinutes": 40,
+      "priceInDollars": 35,
+      "discountPercentage": 8,
+      "distanceRating": 4.6,
+      "liked": true,
+      "shareLink": "https://example.com/restaurant-e",
+      "image": "https://th.bing.com/th/id/OIP.oaMXFk2_1WyRNiya-VDm8AAAAA?w=472&h=265&rs=1&pid=ImgDetMain"
     }
   ]
   
