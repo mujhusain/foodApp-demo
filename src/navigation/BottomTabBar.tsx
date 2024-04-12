@@ -3,31 +3,40 @@ import {
   Alert,
   Animated,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { CurvedBottomBarExpo } from 'react-native-curved-bottom-bar';
+import {CurvedBottomBar} from 'react-native-curved-bottom-bar';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { NavigationContainer } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import {NavigationContainer} from '@react-navigation/native';
+import Home from '../screens/Home/Home';
 
-const Screen1: React.FC = () => {
+const Screen1 = () => {
   return <View style={styles.screen1} />;
 };
 
-const Screen2: React.FC = () => {
+const Screen2 = () => {
   return <View style={styles.screen2} />;
 };
 
-const BottomTabBar: React.FC = () => {
-  const _renderIcon = (routeName: string, selectedTab: string) => {
-    let icon = '';
+export default function BottomtabNavigator() {
+  const _renderIcon = (routeName: any, selectedTab: any) => {
+    let icon = 'home';
 
     switch (routeName) {
-      case 'title1':
-        icon = 'ios-home-outline';
+      case 'Home':
+        icon = 'home';
         break;
-      case 'title2':
-        icon = 'settings-outline';
+      case 'Follow':
+        icon = 'heart-outline';
+        break;
+      case 'Follow':
+        icon = 'home';
+        break;
+      case 'Profile':
+        icon = 'home';
         break;
     }
 
@@ -35,66 +44,67 @@ const BottomTabBar: React.FC = () => {
       <Ionicons
         name={icon}
         size={25}
-        color={routeName === selectedTab ? 'black' : 'gray'}
+        color={routeName === selectedTab ? 'orange' : 'white'}
       />
     );
   };
-
-  const renderTabBar = ({
-    routeName,
-    selectedTab,
-    navigate,
-  }: {
-    routeName: string;
-    selectedTab: string;
-    navigate: (route: string) => void;
-  }) => {
+  const renderTabBar = ({routeName, selectedTab, navigate}: any) => {
     return (
       <TouchableOpacity
         onPress={() => navigate(routeName)}
         style={styles.tabbarItem}>
         {_renderIcon(routeName, selectedTab)}
+        <Text style={{color: 'white'}}>Home</Text>
       </TouchableOpacity>
     );
   };
 
   return (
-    <NavigationContainer>
-      <CurvedBottomBarExpo.Navigator
+    <NavigationContainer
+    >
+      <CurvedBottomBar.Navigator
         type="DOWN"
         style={styles.bottomBar}
         shadowStyle={styles.shawdow}
-        height={55}
-        circleWidth={50}
-        bgColor="white"
+        height={60}
+        circleWidth={60}
+        bgColor={'black'}
         initialRouteName="title1"
-        borderTopLeftRight
-        renderCircle={({ selectedTab, navigate }) => (
+        borderTopLeftRight={false}
+        renderCircle={({selectedTab, navigate}) => (
           <Animated.View style={styles.btnCircleUp}>
             <TouchableOpacity
               style={styles.button}
               onPress={() => Alert.alert('Click Action')}>
-              <Ionicons name={'apps-sharp'} color="gray" size={25} />
+              <AntDesign name={'plus'} color="white" size={35} />
             </TouchableOpacity>
           </Animated.View>
         )}
         tabBar={renderTabBar}>
-        <CurvedBottomBarExpo.Screen
-          name="title1"
+        <CurvedBottomBar.Screen
+          name="Home"
+          position="LEFT"
+          component={() => <Home />}
+        />
+        <CurvedBottomBar.Screen
+          name="Follow"
           position="LEFT"
           component={() => <Screen1 />}
         />
-        <CurvedBottomBarExpo.Screen
-          name="title2"
+        <CurvedBottomBar.Screen
+          name="Trending"
           component={() => <Screen2 />}
           position="RIGHT"
         />
-      </CurvedBottomBarExpo.Navigator>
+        <CurvedBottomBar.Screen
+          name="Profile"
+          component={() => <Screen2 />}
+          position="RIGHT"
+        />
+      </CurvedBottomBar.Navigator>
     </NavigationContainer>
   );
-};
-
-export default BottomTabBar;
+}
 
 export const styles = StyleSheet.create({
   container: {
@@ -102,7 +112,7 @@ export const styles = StyleSheet.create({
     padding: 20,
   },
   shawdow: {
-    shadowColor: '#DDDDDD',
+    shadowColor: 'orange',
     shadowOffset: {
       width: 0,
       height: 0,
@@ -116,13 +126,13 @@ export const styles = StyleSheet.create({
   },
   bottomBar: {},
   btnCircleUp: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 80,
+    height: 80,
+    borderRadius: 80,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#E8E8E8',
-    bottom: 30,
+    backgroundColor: 'orange',
+    bottom: 45,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

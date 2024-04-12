@@ -1,0 +1,15 @@
+diff --git a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx
+index 7a6a7f5..b1028b7 100644
+--- a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx
++++ b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx
+@@ -283,7 +283,9 @@ const BottomBarComponent: (
+ 
+     const main = useMemo(() => {
+       return (
+-        <Tab.Navigator {...props} tabBar={MyTabBar}>
++        <Tab.Navigator {...props} tabBar={MyTabBar}
++        screenOptions={{ headerShown: false }} // Hide default header for all screens in the Tab Navigator
++        >
+           {children?.map((e: any) => {
+             const Component = e?.props?.component;
+ 
