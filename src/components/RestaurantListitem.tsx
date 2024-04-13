@@ -99,11 +99,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     borderRadius: 10,
     overflow: 'hidden',
+    borderColor: COLORS.lightGray,
   },
   image: {
     height: 200,
     width: '100%',
-    //   backgroundColor:'red'
   },
   firstInnerContainer: {
     flex: 1,
@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     color: 'white',
+    fontFamily: 'Sofia Sans',
   },
   iconButton: {
     borderWidth: 0.5,

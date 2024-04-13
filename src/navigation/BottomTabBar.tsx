@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Alert,
   Animated,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -12,7 +13,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {NavigationContainer} from '@react-navigation/native';
 import Home from '../screens/Home/Home';
-import { COLORS } from '../constants/colors';
+import {COLORS} from '../constants/colors';
 
 const Screen1 = () => {
   return <View style={styles.screen1} />;
@@ -61,49 +62,50 @@ export default function BottomtabNavigator() {
   };
 
   return (
-    <NavigationContainer
-    >
-      <CurvedBottomBar.Navigator
-        type="DOWN"
-        style={styles.bottomBar}
-        shadowStyle={styles.shawdow}
-        height={60}
-        circleWidth={60}
-        bgColor={'black'}
-        initialRouteName="title1"
-        borderTopLeftRight={false}
-        renderCircle={({selectedTab, navigate}) => (
-          <Animated.View style={styles.btnCircleUp}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => Alert.alert('Click Action')}>
-              <AntDesign name={'plus'} color="white" size={35} />
-            </TouchableOpacity>
-          </Animated.View>
-        )}
-        tabBar={renderTabBar}>
-        <CurvedBottomBar.Screen
-          name="Home"
-          position="LEFT"
-          component={() => <Home />}
-        />
-        <CurvedBottomBar.Screen
-          name="Follow"
-          position="LEFT"
-          component={() => <Screen1 />}
-        />
-        <CurvedBottomBar.Screen
-          name="Trending"
-          component={() => <Screen2 />}
-          position="RIGHT"
-        />
-        <CurvedBottomBar.Screen
-          name="Profile"
-          component={() => <Screen2 />}
-          position="RIGHT"
-        />
-      </CurvedBottomBar.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={{flex: 1}}>
+      <NavigationContainer>
+        <CurvedBottomBar.Navigator
+          type="DOWN"
+          style={styles.bottomBar}
+          shadowStyle={styles.shawdow}
+          height={60}
+          circleWidth={60}
+          bgColor={'black'}
+          initialRouteName="title1"
+          borderTopLeftRight={false}
+          renderCircle={({selectedTab, navigate}) => (
+            <Animated.View style={styles.btnCircleUp}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => Alert.alert('Click Action')}>
+                <AntDesign name={'plus'} color="white" size={35} />
+              </TouchableOpacity>
+            </Animated.View>
+          )}
+          tabBar={renderTabBar}>
+          <CurvedBottomBar.Screen
+            name="Home"
+            position="LEFT"
+            component={() => <Home />}
+          />
+          <CurvedBottomBar.Screen
+            name="Follow"
+            position="LEFT"
+            component={() => <Screen1 />}
+          />
+          <CurvedBottomBar.Screen
+            name="Trending"
+            component={() => <Screen2 />}
+            position="RIGHT"
+          />
+          <CurvedBottomBar.Screen
+            name="Profile"
+            component={() => <Screen2 />}
+            position="RIGHT"
+          />
+        </CurvedBottomBar.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
@@ -113,13 +115,12 @@ export const styles = StyleSheet.create({
     padding: 20,
   },
   shawdow: {
-    shadowColor: 'orange',
     shadowOffset: {
       width: 0,
       height: 0,
     },
     shadowOpacity: 1,
-    shadowRadius: 5,
+    shadowRadius: 2,
   },
   button: {
     flex: 1,
@@ -139,7 +140,7 @@ export const styles = StyleSheet.create({
       width: 3,
       height: 3.5,
     },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.4,
     shadowRadius: 4.41,
     elevation: 10,
   },
