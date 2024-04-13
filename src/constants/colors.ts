@@ -1,3 +1,5 @@
+import invert from 'invert-color';
+
 export const COLORS = {
     TRANSPARENT: 'transparent',
     white: 'rgb(255,255,255)',
@@ -24,3 +26,23 @@ export const COLORS = {
     darkBlueGrey: 'rgb(46,58,89)',
     lightBlueGrey: 'rgb(197, 206, 224)'
   };
+
+
+
+/* get colors */
+export const colors = (idDark=false) => {
+  const lightColors:any = {
+    background: '#FFFFFF',
+    primary: '#512DA8',
+    text: '#121212',
+    error: '#D32F2F',
+    black: '#000',
+    white: '#fff',
+  }
+
+  const darkColors:any = {}
+  for (const colors in lightColors) {
+    darkColors[colors] = invert(lightColors[colors]);
+  }
+  return idDark ? darkColors : lightColors;
+}

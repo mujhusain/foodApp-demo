@@ -4,11 +4,10 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  FlatList,
   StyleSheet,
   ImageBackground,
 } from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign'; // You may need to install 'expo' package for this
+import AntDesign from 'react-native-vector-icons/AntDesign'; 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {COLORS} from '../constants/colors';
 
@@ -28,13 +27,7 @@ export const renderItem = ({item}: {item: Restaurant}) => (
   <View style={styles.itemContainer}>
     <ImageBackground source={{uri: item.image}} style={styles.image}>
       <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          paddingRight: 20,
-          paddingTop: 20,
-        }}>
+        style={styles.firstInnerContainer}>
         <View style={styles.ratingContainer}>
           <AntDesign name="star" size={16} color={'white'} />
           <Text style={styles.ratingText}>{item.distanceRating}</Text>
@@ -105,7 +98,6 @@ export const renderItem = ({item}: {item: Restaurant}) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //   backgroundColor: '#fff',
   },
   itemContainer: {
     flexDirection: 'column',
@@ -119,9 +111,15 @@ const styles = StyleSheet.create({
     width: '100%',
     //   backgroundColor:'red'
   },
+  firstInnerContainer:{
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingRight: 20,
+    paddingTop: 20,
+  },
   overlay: {
     backgroundColor: 'rgba(2,10,0,0.5)',
-    //   justifyContent: 'space-between',
     height: '35%',
     padding: 10,
   },
