@@ -18,7 +18,7 @@ interface SearchBarProps {
           placeholder="Find restaurants..."
           style={styles.input}
           value={searchText}
-          placeholderTextColor={COLORS.white}
+          placeholderTextColor={COLORS.lightGray}
           onChangeText={(text:string) =>setSearchText(text)}
         />
         <TouchableOpacity onPress={onCheck} style={[styles.iconContainer,{backgroundColor:COLORS.yellow}]}>

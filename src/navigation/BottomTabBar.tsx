@@ -136,12 +136,12 @@ export const styles = StyleSheet.create({
     bottom: 43,
     shadowColor: COLORS.yellow,
     shadowOffset: {
-      width: 5,
-      height: 10,
+      width: 3,
+      height: 3.5,
     },
     shadowOpacity: 0.3,
     shadowRadius: 4.41,
-    elevation: 15,
+    elevation: 10,
   },
   imgCircle: {
     width: 30,
