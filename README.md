@@ -1,3 +1,8 @@
+Screenshot:
+
+
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-04-13 at 10 39 10](https://github.com/mujhusain/foodApp-demo/assets/93472360/959d2244-8050-4c90-b0c8-0245485c4a23)
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
