@@ -12,6 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {NavigationContainer} from '@react-navigation/native';
 import Home from '../screens/Home/Home';
+import { COLORS } from '../constants/colors';
 
 const Screen1 = () => {
   return <View style={styles.screen1} />;
@@ -54,7 +55,7 @@ export default function BottomtabNavigator() {
         onPress={() => navigate(routeName)}
         style={styles.tabbarItem}>
         {_renderIcon(routeName, selectedTab)}
-        <Text style={{color: 'white'}}>Home</Text>
+        <Text style={{color: 'white'}}>{routeName}</Text>
       </TouchableOpacity>
     );
   };
@@ -126,21 +127,21 @@ export const styles = StyleSheet.create({
   },
   bottomBar: {},
   btnCircleUp: {
-    width: 80,
-    height: 80,
-    borderRadius: 80,
+    width: 75,
+    height: 75,
+    borderRadius: 75,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'orange',
-    bottom: 45,
-    shadowColor: '#000',
+    bottom: 43,
+    shadowColor: COLORS.yellow,
     shadowOffset: {
-      width: 0,
-      height: 1,
+      width: 5,
+      height: 10,
     },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-    elevation: 1,
+    shadowOpacity: 0.3,
+    shadowRadius: 4.41,
+    elevation: 15,
   },
   imgCircle: {
     width: 30,

@@ -36,7 +36,7 @@ export const renderItem = ({item}: {item: Restaurant}) => (
           paddingTop: 20,
         }}>
         <View style={styles.ratingContainer}>
-          <AntDesign name="star" size={16} />
+          <AntDesign name="star" size={16} color={'white'} />
           <Text style={styles.ratingText}>{item.distanceRating}</Text>
         </View>
         <View
@@ -49,7 +49,7 @@ export const renderItem = ({item}: {item: Restaurant}) => (
             <AntDesign
               name={item.liked ? 'heart' : 'hearto'}
               size={16}
-              color={item.liked ? 'yellow' : 'black'}
+              color={item.liked ? 'yellow' : 'white'}
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.iconButton}>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 60,
     height: 33,
-    backgroundColor: COLORS.yellow,
+    backgroundColor: COLORS.orange,
     paddingVertical: 5,
     paddingRight: 5,
     borderTopRightRadius: 15,
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
   },
   ratingText: {
     fontWeight: 'bold',
+    color: COLORS.white,
   },
   infoContainer: {
     flex: 1,
